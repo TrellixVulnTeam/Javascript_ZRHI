@@ -1,0 +1,19 @@
+User permissions notes using binary
+
+ignore first 5 bits and focus on last 3 (Read, Write, Execute)
+Basic user? (read-only) = 00000100 (4)
+Premium user? (write-only) = 0000010 (2)
+Admin? (execute-only) = 00000001 (1)
+
+
+// set permission using |
+const readPerm = 4
+const write perm = 2
+const execute perm = 1
+
+let myPermission = 0
+myPermission = myPermission | readPerm | writePerm
+
+
+// verify user can read
+let perms = (myPermission & readPermission)
